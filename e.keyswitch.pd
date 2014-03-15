@@ -1,0 +1,84 @@
+#N canvas 453 39 740 492 10;
+#X obj 41 11 notein;
+#X obj 58 369 noteout;
+#X obj 137 340 ctlin;
+#X obj 137 368 ctlout;
+#X obj 111 89 select 21;
+#X obj 111 112 f;
+#X obj 206 69 select 25;
+#X obj 185 179 gate;
+#X obj 299 69 select 26;
+#X obj 278 179 gate;
+#X obj 111 178 !- 1;
+#X obj 20 231 gate;
+#X obj 41 82 pack;
+#X obj 20 254 t a b;
+#X obj 170 283 f 1;
+#X obj 20 341 unpack f f;
+#X obj 126 68 f;
+#X obj 20 211 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 111 137 > 0;
+#X obj 247 345 nbx 3 30 0 20 0 0 empty empty CHAN 0 -12 1 20 -128992
+-262144 -128992 15 256;
+#N canvas 224 250 450 300 if-changed 0;
+#X obj 163 157 !=;
+#X obj 178 132 f;
+#X obj 125 185 gate;
+#X obj 129 101 t f f f b;
+#X obj 126 73 inlet;
+#X obj 124 213 outlet;
+#X connect 0 0 2 0;
+#X connect 1 0 0 1;
+#X connect 2 0 5 0;
+#X connect 3 0 1 1;
+#X connect 3 1 2 1;
+#X connect 3 2 0 0;
+#X connect 3 3 1 0;
+#X connect 4 0 3 0;
+#X restore 247 300 pd if-changed;
+#X text 175 90 A0;
+#X text 212 90 C#1;
+#X text 304 92 D1;
+#X text 359 14 * OSX | Make sure the IAC Driver is active + Open "Audio
+MIDI Setup" (/Applications/Utilities/Audio MIDI Setup) + MENU -> Window/Show
+MIDI Window + Double Click on the icon "IAC Driver" + A window pops
+up. "Device is online" should be checked * PD | CONFIGURE MIDI + MENU
+-> Media/MIDI Settings + Input device 1: your keyboard + Output device
+1: IAC Driver + Button -> Apply \, then OK ;
+#X msg 185 199 15;
+#X msg 278 199 16;
+#X obj 216 179 loadbang;
+#X connect 0 0 4 0;
+#X connect 0 0 6 0;
+#X connect 0 0 8 0;
+#X connect 0 0 12 0;
+#X connect 0 1 12 1;
+#X connect 0 1 16 0;
+#X connect 2 0 3 0;
+#X connect 2 1 3 1;
+#X connect 4 0 5 0;
+#X connect 5 0 18 0;
+#X connect 6 0 7 1;
+#X connect 7 0 25 0;
+#X connect 8 0 9 1;
+#X connect 9 0 26 0;
+#X connect 10 0 17 0;
+#X connect 11 0 13 0;
+#X connect 12 0 11 1;
+#X connect 13 0 15 0;
+#X connect 13 1 14 0;
+#X connect 14 0 1 2;
+#X connect 14 0 3 2;
+#X connect 14 0 20 0;
+#X connect 15 0 1 0;
+#X connect 15 1 1 1;
+#X connect 16 0 5 1;
+#X connect 17 0 11 0;
+#X connect 18 0 10 0;
+#X connect 18 0 7 0;
+#X connect 18 0 9 0;
+#X connect 20 0 19 0;
+#X connect 25 0 14 1;
+#X connect 26 0 14 1;
+#X connect 27 0 25 0;

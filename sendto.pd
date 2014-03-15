@@ -1,0 +1,17 @@
+#N canvas 172 178 450 300 10;
+#X obj 107 106 list split 1;
+#X obj 108 219 s;
+#X obj 107 133 pp symbol;
+#X obj 95 197 list;
+#X obj 107 160 t b s;
+#X obj 107 78 inlet;
+#X text 226 43 expects a message of the type:;
+#X text 225 67 receiver elem0 [elem1...];
+#X text 228 88 it sends everything after receiver to receiver;
+#X connect 0 0 2 0;
+#X connect 0 1 3 1;
+#X connect 2 0 4 0;
+#X connect 3 0 1 0;
+#X connect 4 0 3 0;
+#X connect 4 1 1 1;
+#X connect 5 0 0 0;
